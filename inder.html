@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas
+    id = "myCanvas"
+    width ="1200"
+    height = "900"
+    style = "background-color: rgb(59, 78, 78)"
+    ></canvas>
+    <br>
+    <button onclick ="changeDirection('left')">Turn Left</button>
+    <button onclick ="changeDirection('right')">Turn Right</button><br>
+    <button onclick ="changeSpeed('increase')">Increase Speed</button><br>
+    <button onclick ="changeSpeed('decrease')">Decrease Speed</button><br>
+    <button onclick ="changeColor()">Change Color</button>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let  car = {
+            x: canvas.width / 4,
+            y: canvas.height / 4,
+            direction: 0,
+            speed: 0,
+            color: 'red',
+            passengers: 4,
+            isMoving: false,
+        };
+
+    </script>
+</body>
+</html>
