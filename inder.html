@@ -74,8 +74,15 @@
                 car.speed += 1;
             } else if (action === 'decrease'){
                 car.speed -= 1;
+                if(car.speed < 0) car.speed = 0;
+                
             }
         }
+        function changeColor(){
+            car.color = prompt('Enter a new color for the car:  ', car.color);
+        }
+
+        gameloop();
 
 
 
