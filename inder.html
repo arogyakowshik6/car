@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car control</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <canvas
     id = "myCanvas"
-    width ="1200"
-    height = "900"
+    width ="600"
+    height = "600"
     style = "background-color: rgb(59, 78, 78)"
     ></canvas>
     <br>
@@ -25,8 +24,8 @@
         const ctx = canvas.getContext('2d');
 
         let  car = {
-            x: canvas.width / 4,
-            y: canvas.height / 4,
+            x: canvas.width / 2,
+            y: canvas.height / 2,
             direction: 0,
             speed: 0,
             color: 'red',
@@ -57,7 +56,7 @@
 
             )
             {
-                car.direction = (car.direction + 180)
+                car.direction +=  180;
 
             }
 
@@ -82,7 +81,11 @@
             car.color = prompt('Enter a new color for the car:  ', car.color);
         }
 
-        gameloop();
+        function gameloop(){
+            updateCar();
+            drawcar();
+            requestAnimationFrame(gameloop);
+        }
 
 
 
