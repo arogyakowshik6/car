@@ -34,7 +34,17 @@
             isMoving: false,
         };
 
-        
+        function drawcar(){
+            ctx.clearrect(0, 0, canvas.width, canvas.height);
+            ctx.save();
+            ctx.translate(car.x, car.y);
+            ctx.rotate((car.direction * Math.PI)/180);
+            ctx.fillStyle = car.color;
+            ctx.fillRect(-25, -15, 50, 30);
+            ctx.fillStyle = 'black';
+            ctx.fillRect(-15, -25, 30, 10);
+            ctx.restore();
+        }
 
     </script>
 </body>
